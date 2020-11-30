@@ -42,7 +42,7 @@ if (!(APP_ID && APP_SECRET && VERIFY_TOKEN && ACCESS_TOKEN && SERVER_URL)) {
 }
 
 var graphapi = request.defaults({
-    baseUrl: 'https://graph.facebook.com/v2.9',
+    baseUrl: 'https://graph.facebook.com/v8.0',
     json: true,
     auth: {
         'bearer' : ACCESS_TOKEN
@@ -449,7 +449,7 @@ function callSendAPI(messageData) {
 
 function setupPersistentMenu() {
     graphapi({
-        url: '/me/messenger_profile',
+        url: '/me/messages',
         method: 'POST',
         qs: {
             'persistent_menu':[
@@ -482,7 +482,7 @@ function setupPersistentMenu() {
 
 function setupGetStartedButton() {
     graphapi({
-        url: '/me/thread_settings',
+        url: '/me/messages',
         method: 'POST',
         qs: {
             'setting_type':'call_to_actions',
