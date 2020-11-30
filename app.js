@@ -467,12 +467,9 @@ function setupGetStartedButton() {
         url: '/me/messenger_profile',
         method: 'POST',
         qs: {
-           
-                {
                     'get_started':{
                     'payload':'GET_STARTED_PAYLOAD'
-                     }
-                }
+                    
              //get_started
         },
     }, function (error, response) {
