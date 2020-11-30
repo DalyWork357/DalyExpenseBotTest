@@ -469,6 +469,7 @@ function setupGetStartedButton() {
         qs: {
                     'get_started':{
                     'payload':'GET_STARTED_PAYLOAD'
+                    }
                     
              //get_started
         },
