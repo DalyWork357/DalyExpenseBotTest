@@ -450,8 +450,8 @@ function setupPersistentMenu() {
                         }
                     ]
                 }
-                }
-            ]
+             ]
+            },
         },
     }, function (error, response) {
         if(error) {
