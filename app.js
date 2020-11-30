@@ -465,13 +465,13 @@ function setupGetStartedButton() {
         url: '/me/messenger_profile',
         method: 'POST',
         qs: {
-            'get_started' :
-            {}
             'setting_type':'call_to_actions',
             'thread_state':'new_thread',
             'call_to_actions':[
                 {
+                    'get_started':{
                     'payload':'GET_STARTED_PAYLOAD'
+                    }
                 }
             ]
              //get_started
