@@ -432,7 +432,6 @@ function setupPersistentMenu() {
         url: '/me/messenger_profile',
         method: 'POST',
         qs: {
-            'get_started' : {
             'persistent_menu':[
                 {
                     'locale':'default',
@@ -451,7 +450,6 @@ function setupPersistentMenu() {
                     ]
                 }
              ]
-            },
         },
     }, function (error, response) {
         if(error) {
