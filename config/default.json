@@ -1,7 +1,7 @@
 {
-	"appId": "",
-    "appSecret": "",
-    "pageAccessToken": "",
-    "validationToken": "",
-    "serverURL": ""
+	"appId": "758982198161736",
+    "appSecret": "7d7c7630acbfd256e659cd99f8f879c1",
+    "pageAccessToken": "DQVJzWUZA6ck1TSjUxV2FRVzMyamtIQ0dtYlVFNkhxVDduTXBDUTQ3MDBReW5Md2hYTllfZAVdxRFlxVW9jR1FkQVVLd2cyNHB3d2RTWnAyby1OXzd0Y290ZAEpYb19iM0hpaTZAfajF5N0RtQUhNUXpwT0wxd25ib1RUTHVvam53NUsxRGpXZAGpSYnZATaUctd3BYNmM3S2hkSXZASOG1mNDhYaGRwa2tOMmowVEhyODhmUWE3T0wwcUEtcENvRUVRaGp3OF83RjJMUEh3cHdGc1RzMgZDZD",
+    "validationToken": "jptoken",
+    "serverURL": "https://dalyexpensebot.herokuapp.com/"
 }
