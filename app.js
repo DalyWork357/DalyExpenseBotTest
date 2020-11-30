@@ -60,26 +60,6 @@ function enableSubscriptions() {
     });
 }
 
-function subscribeWebhook() {
-    graphapi({
-        url: '/app/subscriptions',
-        method: 'POST',
-        auth: {'bearer' : APP_ID + '|' + APP_SECRET},
-        qs: {
-            'object': 'page',
-            'fields': 'message_deliveries,messages,messaging_postbacks,messaging_optins',
-            'verify_token': VERIFY_TOKEN,
-            'callback_url': SERVER_URL + '/webhook'
-        }
-    }, function (error, response) {
-        if(error) {
-            console.error(error);
-        } else {
-            console.log('subscribeWebhook',response.body);
-        }
-    });
-}
-
 /*
  * Verify that the callback came from Facebook. Using the App Secret from
  * the App Dashboard, we can verify the signature that is sent with each
@@ -449,7 +429,7 @@ function callSendAPI(messageData) {
 
 function setupPersistentMenu() {
     graphapi({
-        url: '/me/messages',
+        url: '/me/messenger_profile',
         method: 'POST',
         qs: {
             'persistent_menu':[
@@ -482,7 +462,7 @@ function setupPersistentMenu() {
 
 function setupGetStartedButton() {
     graphapi({
-        url: '/me/messages',
+        url: '/me/messenger_profile',
         method: 'POST',
         qs: {
             'setting_type':'call_to_actions',
@@ -699,8 +679,6 @@ function rejectClaim(senderID, claimId) {
 // certificate authority.
 app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));
-    enableSubscriptions();
-    subscribeWebhook();
     setupGetStartedButton();
     setupPersistentMenu();
     setupGreetingText();
