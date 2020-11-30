@@ -682,7 +682,6 @@ app.listen(app.get('port'), function() {
     setupGetStartedButton();
     setupPersistentMenu();
     setupGreetingText();
-    sendGetStarted();
 });
 
 module.exports = app;
