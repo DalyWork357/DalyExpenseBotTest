@@ -59,7 +59,25 @@ function enableSubscriptions() {
         console.log('enableSubscriptions',body);
     });
 }
-
+function subscribeWebhook() {
+    graphapi({
+        url: '/app/subscriptions',
+        method: 'POST',
+        auth: {'bearer' : APP_ID + '|' + APP_SECRET},
+        qs: {
+            'object': 'page',
+            'fields': 'message_deliveries,messages,messaging_postbacks,message_reads',
+            'verify_token': VERIFY_TOKEN,
+            'callback_url': SERVER_URL + '/webhook'
+        }
+    }, function (error, response) {
+        if(error) {
+            console.error(error);
+        } else {
+            console.log('subscribeWebhook',response.body);
+        }
+    });
+}
 /*
  * Verify that the callback came from Facebook. Using the App Secret from
  * the App Dashboard, we can verify the signature that is sent with each
